@@ -123,4 +123,44 @@ function saveNotesToLocalStorage() {
 function showSearchedNotes(filteredNotes) {
   if (!filteredNotes) return;
   document.querySelectorAll(".note").forEach(li => li.remove());
-  
+  filteredNotes.forEach((note, id) => {
+    let filterDesc = note.description.replaceAll("\n", '<br/>');
+    let liTag = `<li class="note">
+                    <div class="details">
+                        <p>${note.title}</p>
+                        <span>${filterDesc}</span>
+                    </div>
+                    <div class="bottom-content">
+                        <span>${note.date}</span>
+                        <div class="settings">
+                            <i onclick="showMenu(this)" class="uil uil-ellipsis-h"></i>
+                            <ul class="menu">
+                                <li onclick="updateNote(${id}, '${note.title}', '${filterDesc}')"><i class="uil uil-pen"></i>Edytuj</li>
+                                <li onclick="deleteNote(${id})"><i class="uil uil-trash"></i>Usuń</li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>`;
+    addBox.insertAdjacentHTML("afterend", liTag);
+  });
+}
+
+function searchNotes(searchTerm) {
+  const filteredNotes = notes.filter(note => {
+    const noteTitle = note.title.toLowerCase();
+    const noteDescription = note.description.toLowerCase();
+    return (
+      noteTitle.includes(searchTerm.toLowerCase()) ||
+      noteDescription.includes(searchTerm.toLowerCase())
+    );
+  });
+
+  showSearchedNotes(filteredNotes);
+}
+
+const searchInput = document.querySelector(".search-box input");
+
+searchInput.addEventListener("input", () => {
+  const searchTerm = searchInput.value.trim();
+  searchNotes(searchTerm);
+});
