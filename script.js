@@ -87,3 +87,40 @@ function updateNote(noteId, title, filterDesc) {
   addBtn.innerText = "Aktualizuj";
 }
 
+addBtn.addEventListener("click", e => {
+  e.preventDefault();
+  let title = titleTag.value.trim();
+  let description = descTag.value.trim();
+
+  if (title || description) {
+    let currentDate = new Date();
+    let month = months[currentDate.getMonth()];
+    let day = currentDate.getDate();
+    let year = currentDate.getFullYear();
+
+    let noteInfo = {
+      title,
+      description,
+      date: `${month} ${day}, ${year}`
+    };
+
+    if (!isUpdate) {
+      notes.push(noteInfo);
+    } else {
+      isUpdate = false;
+      notes[updateId] = noteInfo;
+    }
+
+    saveNotesToLocalStorage();
+    showNotes();
+    closeIcon.click();
+}});
+
+function saveNotesToLocalStorage() {
+  localStorage.setItem("notes", JSON.stringify(notes));
+}
+
+function showSearchedNotes(filteredNotes) {
+  if (!filteredNotes) return;
+  document.querySelectorAll(".note").forEach(li => li.remove());
+  
