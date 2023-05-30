@@ -1,13 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Roboto+Mono:wght@300&display=swap');
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Caveat', sans-serif;
 }
-body{
-  background: #88ABFF;
+body {
+  background: linear-gradient(to right, #88ABFF, #c04040);
+  background-size: 200% 200%;
+  animation: gradientAnimation 10s ease infinite;
 }
+
 ::selection{
   color: #fff;
   background: #618cf8;
@@ -25,6 +28,10 @@ body{
   padding: 15px 20px 20px;
   background: #fff;
   box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+.wrapper li:hover {
+  transform: scale(1.1);
 }
 .add-box, .icon, .bottom-content, 
 .popup, header, .settings .menu li{
@@ -36,6 +43,10 @@ body{
   cursor: pointer;
   flex-direction: column;
   justify-content: center;
+  transition: transform 0.3s ease;
+}
+.add-box:hover {
+  transform: scale(1.1);
 }
 .add-box .icon{
   height: 78px;
@@ -45,10 +56,13 @@ body{
   border-radius: 50%;
   justify-content: center;
   border: 2px dashed #88ABFF;
+  animation: pulse 3s infinite;
 }
+
 .add-box p{
   color: #88ABFF;
-  font-weight: 500;
+  font-size: 27px;
+  font-weight: 700;
   margin-top: 20px;
 }
 .note{
@@ -79,13 +93,13 @@ body{
   border-radius: 25px;
 }
 .note p{
-  font-size: 22px;
+  font-size: 30px;
   font-weight: 500;
 }
 .note span{
   display: block;
   color: #575757;
-  font-size: 16px;
+  font-size: 22px;
   margin-top: 5px;
 }
 .note .bottom-content{
@@ -94,7 +108,7 @@ body{
 }
 .bottom-content span{
   color: #6D6D6D;
-  font-size: 14px;
+  font-size: 20px;
 }
 .bottom-content .settings{
   position: relative;
@@ -122,7 +136,7 @@ body{
 }
 .settings .menu li{
   height: 25px;
-  font-size: 16px;
+  font-size: 17px;
   margin-bottom: 2px;
   padding: 17px 15px;
   cursor: pointer;
@@ -182,8 +196,8 @@ body{
   border-bottom: 1px solid #ccc;
 }
 .content header p{
-  font-size: 20px;
-  font-weight: 500;
+  font-size: 25px;
+  font-weight: 700;
 }
 .content header i{
   color: #8b8989;
@@ -197,7 +211,8 @@ body{
   margin-bottom: 20px;
 }
 form .row label{
-  font-size: 18px;
+  font-size: 22px;
+  font-weight: 600;
   display: block;
   margin-bottom: 6px;
 }
@@ -205,7 +220,7 @@ form :where(input, textarea){
   height: 50px;
   width: 100%;
   outline: none;
-  font-size: 17px;
+  font-size: 28px;
   padding: 0 15px;
   border-radius: 4px;
   border: 1px solid #999;
@@ -225,7 +240,7 @@ form button{
   outline: none;
   border: none;
   cursor: pointer;
-  font-size: 17px;
+  font-size: 24px;
   border-radius: 4px;
   background: #6A93F8;
 }
@@ -240,10 +255,33 @@ form button{
   height: 40px;
   width: 200px;
   padding: 0 10px;
-  font-size: 16px;
+  font-size: 22px;
   border-radius: 4px;
   border: 1px solid #999;
   outline: none;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 @media (max-width: 660px){
