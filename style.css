@@ -6,11 +6,10 @@
   font-family: 'Caveat', sans-serif;
 }
 body {
-  background: linear-gradient(to right, #88ABFF, #c04040);
-  background-size: 200% 200%;
-  animation: gradientAnimation 10s ease infinite;
+  background-image: url(/streszczenie-grunge-dekoracyjne-ulga-granatowa-stiuk-tekstura-sciany-szorstki-szeroki-kat-kolorowe-tlo.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-
 ::selection{
   color: #fff;
   background: #618cf8;
@@ -26,7 +25,7 @@ body {
   list-style: none;
   border-radius: 5px;
   padding: 15px 20px 20px;
-  background: #fff;
+  background: rgba(239, 240, 243, 0.859);
   box-shadow: 0 4px 8px rgba(0,0,0,0.05);
   transition: transform 0.3s ease;
 }
@@ -51,16 +50,16 @@ body {
 .add-box .icon{
   height: 78px;
   width: 78px;
-  color: #88ABFF;
+  color: #5686f4;
   font-size: 40px;
   border-radius: 50%;
   justify-content: center;
-  border: 2px dashed #88ABFF;
+  border: 2px dashed #5686f4;
   animation: pulse 3s infinite;
 }
 
 .add-box p{
-  color: #88ABFF;
+  color: #5686f4;
   font-size: 27px;
   font-weight: 700;
   margin-top: 20px;
@@ -98,7 +97,7 @@ body {
 }
 .note span{
   display: block;
-  color: #575757;
+  color: #1f1e1e;
   font-size: 22px;
   margin-top: 5px;
 }
