@@ -6,7 +6,7 @@
   font-family: 'Caveat', sans-serif;
 }
 body {
-  background-image: url(/streszczenie-grunge-dekoracyjne-ulga-granatowa-stiuk-tekstura-sciany-szorstki-szeroki-kat-kolorowe-tlo.jpg);
+  background-image: url(/background.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -92,13 +92,13 @@ body {
   border-radius: 25px;
 }
 .note p{
-  font-size: 30px;
-  font-weight: 500;
+  font-size: 28px;
+  font-weight: 600;
 }
 .note span{
   display: block;
   color: #1f1e1e;
-  font-size: 22px;
+  font-size: 26px;
   margin-top: 5px;
 }
 .note .bottom-content{
@@ -107,7 +107,7 @@ body {
 }
 .bottom-content span{
   color: #6D6D6D;
-  font-size: 20px;
+  font-size: 22px;
 }
 .bottom-content .settings{
   position: relative;
@@ -135,7 +135,7 @@ body {
 }
 .settings .menu li{
   height: 25px;
-  font-size: 17px;
+  font-size: 18px;
   margin-bottom: 2px;
   padding: 17px 15px;
   cursor: pointer;
@@ -195,7 +195,7 @@ body {
   border-bottom: 1px solid #ccc;
 }
 .content header p{
-  font-size: 25px;
+  font-size: 30px;
   font-weight: 700;
 }
 .content header i{
@@ -210,8 +210,8 @@ body {
   margin-bottom: 20px;
 }
 form .row label{
-  font-size: 22px;
-  font-weight: 600;
+  font-size: 26px;
+  font-weight: 500;
   display: block;
   margin-bottom: 6px;
 }
