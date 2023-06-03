@@ -7,8 +7,8 @@ const descTag = popupBox.querySelector("textarea");
 const addBtn = popupBox.querySelector("button");
 
 const months = [
-  "January", "February", "March", "April", "May", "June", "July",
-  "August", "September", "October", "November", "December"
+  "Styczeń", "Luty", "Marzec", "Kwiecień", "Maj", "Czerwiec", "Lipiec",
+  "Sierpień", "Wrzesień", "Październik", "Listopad", "Grudzień"
 ];
 
 const notes = JSON.parse(localStorage.getItem("notes") || "[]");
@@ -69,8 +69,6 @@ function showMenu(elem) {
 }
 
 function deleteNote(noteId) {
-  let confirmDel = confirm("Czy na pewno chcesz usunąć notatkę?");
-  if (!confirmDel) return;
   notes.splice(noteId, 1);
   saveNotesToLocalStorage();
   showNotes();
@@ -101,7 +99,7 @@ addBtn.addEventListener("click", e => {
     let noteInfo = {
       title,
       description,
-      date: `${month} ${day}, ${year}`
+      date: `${day} ${month}, ${year}`
     };
 
     if (!isUpdate) {
@@ -114,7 +112,8 @@ addBtn.addEventListener("click", e => {
     saveNotesToLocalStorage();
     showNotes();
     closeIcon.click();
-}});
+  }
+});
 
 function saveNotesToLocalStorage() {
   localStorage.setItem("notes", JSON.stringify(notes));
@@ -164,3 +163,4 @@ searchInput.addEventListener("input", () => {
   const searchTerm = searchInput.value.trim();
   searchNotes(searchTerm);
 });
+
