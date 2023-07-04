@@ -10,10 +10,10 @@
 
 
 ## Features
-- Users can add, edit and delete short notes.
-- Users can find notes by individual note word.
-- Each note has a corresponding date.
-- Users can save notes to browser's local storage.
+- Users can add, edit and delete short notes
+- Users can find notes by individual note word
+- Each note has a corresponding date
+- Users can save notes to browser's local storage
 
 
 ## Screenshots
