@@ -1,5 +1,5 @@
 # QuickNote
-> An Easy to Use Notes App build using JavaScript that saves notes on your browser local storage. You can easily perform crud operations on notes and it's also mobile friendly.
+An easy-to-use application built using JavaScript that saves your notes to your browser's local storage. You can perform easy operations on your notes and it is also mobile friendly.
 
 #### Live demo [_here_](http://quicknote.pl/).
 
